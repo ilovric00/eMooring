@@ -1,0 +1,58 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html ng-app="eMooringApp">
+<head>
+
+  <title>eMooring</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/eMooring/favicon.ico" type="image/x-icon"> 
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/eMooring/libs/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/eMooring/css/layout.css"/>
+  <link rel="stylesheet" href="/eMooring/css/widget.css"/>
+
+  <link rel="stylesheet" href="/eMooring/libs/angular-gridster/dist/angular-gridster.min.css"/>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <div ng-include="'/eMooring/views/layout/Header.html'"></div>
+
+  <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div ng-include="'/eMooring/views/layout/Sidebar.html'"></div>
+        <!-- Main -->
+        <div ng-include="'/eMooring/views/layout/Main.html'"></div>
+      </div>
+  </div>
+
+
+  <!-- JS -->
+  <script src="/eMooring/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/eMooring/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Angular libs -->
+  <script src="/eMooring/libs/angular/angular.min.js"></script>
+  <script src="/eMooring/libs/angular-gridster/src/angular-gridster.js"></script>
+  <script src="/eMooring/libs/angular-flot/angular-flot.js"></script>  
+  <!-- Custom AngularJS files -->
+  <script src="/eMooring/app/modules/AppModule.js"></script>
+  <script src="/eMooring/app/services/AppService.js"></script>
+  <script src="/eMooring/app/controllers/GraphController.js"></script>
+  <script src="/eMooring/app/controllers/GaugeController.js"></script>
+  <!-- Flot libs -->
+  <script src="/eMooring/libs/Flot/jquery.flot.js"></script>
+  <script src="/eMooring/libs/Flot/jquery.flot.navigate.js"></script>
+  <script src="/eMooring/libs/Flot/jquery.flot.time.js"></script>
+  <script src="/eMooring/libs/Flot/jquery.flot.resize.js"></script>
+    <!-- Gauges (angular-gage) -->
+  <script src="/eMooring/libs/raphael/raphael.js"></script>
+  <script src="/eMooring/libs/justgage-bower/justgage.js"></script>
+  <script src="/eMooring/libs/angular-gage/dist/angular-gage.min.js"></script>
+
+</body>
+</html>

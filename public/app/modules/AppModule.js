@@ -1,0 +1,1 @@
+var app = angular.module("eMooringApp", ['gridster', 'angular-flot', 'frapontillo.gage']);

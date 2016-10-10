@@ -1,0 +1,168 @@
+/*
+* layout.css
+* Defining a dashboard layout
+* 
+* © 2016 Ivan Lovric 
+* www.linkedin.com/in/ilovri00
+*/
+
+body {
+  font-family: 'Montserrat';
+  color: #2c3e50;
+}
+
+ /* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(26, 188, 156, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: #0fb191;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #6ea298; 
+}
+
+/* Header */
+.eMooring-header, .navbar-default .navbar-brand {
+  background-color: #fff;
+  color: #18af91;
+}
+
+#eMooring-logo {
+  margin-top: 10px;
+  left: 0;
+  position: fixed;
+  margin-left: 110px;
+}
+
+/* Footer */
+#eMooring-footer {
+  background-color: rgba(26, 188, 156, 0.5);
+  bottom: 0;
+  position: fixed;
+  z-index: 1000;
+  height: 50px;
+  width: calc(100% - 250px);
+}
+
+@media (max-width: 768px) {
+  #eMooring-footer {
+    width: calc(100% - 150px);
+  }
+}
+
+.footer-button {
+  background-color: rgba(24, 175, 145, 0.5);
+  color: #fff;
+  height: 50px;
+  bottom: 0;
+  width: 100px;
+  float: right;
+  border-left: 3px solid #fff;
+  text-align: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 300px) {
+  .footer-button {
+    display: none;
+  }
+}
+
+.footer-button:hover {
+  background-color: #18af91;
+}
+
+/* Sidebar container*/
+.eMooring-sidebar {
+  width: 250px;
+  position: fixed;
+  top: 101px; /* 50px + 50px + 1px border */
+  bottom: 0;
+  margin-bottom: 50px;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  background-color: #3cc6ab;
+  border-right: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .eMooring-sidebar {
+    width: 150px;
+  }
+}
+
+.eMooring-sidebar-box {
+  background-color: #18af91;
+  color: #fff;
+  font-size: 20px;
+  position: fixed;
+  height: 50px;
+  width: inherit;
+  border-right: 1px solid #eee;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+ .sidebar-top {
+  margin-top: 50px;
+  top: 0;
+ }
+
+ .sidebar-bottom {
+  bottom: 0;
+ }
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-top: 10px;
+}
+
+.nav-sidebar > li > a {
+  padding-left: 20px;
+  color: #fff;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > li > a:focus, 
+.nav-sidebar > li > a:hover {
+  background-color: #18af91;
+  border-left: 3px solid #fff;
+  padding-left: 17px; /*20px padding - 3px border-left*/
+}
+
+.sidebar-icon {
+  padding-right: 10px;
+}
+
+/* Main container */
+.eMooring-main {
+  background-color: #eaedf1;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .eMooring-main {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+}
+
+#gridster {
+  background-color: pink;
+  margin: 20px;
+}
+
+
