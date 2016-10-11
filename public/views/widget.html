@@ -1,16 +1,18 @@
 <!-- public/views/widget.html -->
 
-<!-- widget-->
-<div class="panel panel-default" gridster-item>
-  <div class="panel-heading widget-header">
-    <h3 class="panel-title text-center">
-      Widget title 
-      <span class="glyphicon glyphicon-remove widget-header-icon"></span>
-    </h3>
-  </div>
-  <div class="panel-body">
-    Widget body
-  </div>
+<!-- graph -->
+<div class="panel panel-default" ng-repeat="id in widgets" gridster-item>
+	<!-- widget header -->
+	<div class="panel-heading widget-header">
+    	<h3 class="panel-title text-center">
+			{{widget[id].title || 'Title'}} 
+			<span ng-click="removeWidget(id)" class="glyphicon glyphicon-remove widget-header-icon"></span>
+    	</h3>
+  	</div>
+  	<!-- widget body -->
+  	<div class="panel-body">
+		<flot dataset="widget[id].graph" options="widget[id].options" height="100px"></flot>
+  	</div>
 </div>
 
 

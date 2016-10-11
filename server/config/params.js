@@ -1,4 +1,4 @@
 module.exports = {
-	'dbCollections': ['treeStructure', 'dataObject', '_idCounters'],
+	'dbCollections': ['widgets', '_idCounters'],
 	'dbTimeout': 3000
 };

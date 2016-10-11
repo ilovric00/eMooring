@@ -1,8 +1,8 @@
 app.service("AppService", function($http) {
 
-    //GET dataObject from server 
-    this.getDataObject = function(id) {
-        return $http.get('/data/' + id);
+    // GET all widgets from server 
+    this.getWidgets = function() {
+        return $http.get('/widgets');
     };
 
 });

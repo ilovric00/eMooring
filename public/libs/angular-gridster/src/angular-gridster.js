@@ -37,7 +37,7 @@
 		minColumns: 1, // minimum amount of columns the grid can scale down to
 		minRows: 1, // minimum amount of rows to show if the grid is empty
 		maxRows: 100, // maximum amount of rows in the grid
-		defaultSizeX: 2, // default width of an item in columns
+		defaultSizeX: 3, // default width of an item in columns
 		defaultSizeY: 1, // default height of an item in rows
 		minSizeX: 1, // minimum column width of an item
 		maxSizeX: null, // maximum column width of an item
