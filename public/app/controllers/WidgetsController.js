@@ -1,4 +1,4 @@
-app.controller('WidgetsController', function ($scope, AppService) {
+app.controller('WidgetsController', function ($scope, AppService, socket) {
 
 	$scope.widget = {};
 	$scope.widgets = [];
@@ -6,59 +6,22 @@ app.controller('WidgetsController', function ($scope, AppService) {
 	// get all widgets from service
 	AppService.getWidgets().then(function(response){
 		response.data.forEach(function(widget){
-			// if widget contains graph
-			if(widget.graph){
+			// if widget contains timeline chart
+			if(widget.timeline){
+				AddTimelineChart(widget._id, widget.timeline);
 				$scope.widgets.push(widget._id);
-				AddGraph(widget._id, widget.graph, widget.title);
 			}
 		});
 	});
 
-	//add graph widget
-	function AddGraph(id ,graph, title) {
-		console.log("Graph widget " + id + " received from server...");
-		$scope.widget[id] = [];
-		$scope.widget[id].graph = graph;
-		$scope.widget[id].title = title;
-		$scope.widget[id].options = {
-			xaxes : [ {
-				mode : 'time'
-			} ],
-			yaxes : [ {
-				min : 0,
-				position : 'left'
-			},
-			{
-				min : 0,
-				alignTicksWithAxis : 1,
-				position : 'right'
-			} ],
-			legend: {
-			  container: '#legend-' + id,
-			  show: true,
-			  noColumns : 10
-			},
-			lines: {
-				show : true
-			},
-			grid: {
-				hoverable : true,
-				borderWidth: 1,
-				borderColor: "#eaedf1",
-				color: "#3a4653",
-				backgroundColor: { colors: ["#fff", "#eee"] }
-			},
-			tooltip : true,
-			tooltipOpts : {
-				content : "%s for %x was %y"
-			},
-			zoom: {
-				interactive: true
-			},
-			pan: {
-				interactive: true
-			}
-		};
+	//add timeline widget
+	function AddTimelineChart(id, timeline) {
+		console.log("Timeline widget " + id + " received from server...");
+		$scope.widget[id] = {};
+		$scope.widget[id].title = 'Post Processing - Sensor No.' + id;
+		$scope.widget[id].isActive = false;
+		$scope.widget[id].timeline = new vis.DataSet();
+		$scope.widget[id].timeline = timeline.data;
 	}; 
 
 	// remove graph widget 
@@ -66,5 +29,28 @@ app.controller('WidgetsController', function ($scope, AppService) {
 		var index = $scope.widgets.indexOf(id);
 		$scope.widgets.splice(index, 1);
 	};
+
+	// start realtime mode - stop post processing
+    $scope.startRealTimeMode = function(id){
+		$scope.widget[id].isActive = true;
+		$scope.widget[id].title = 'Real Time - Sensor No.' + id;
+		$scope.widget[id].timeline = new vis.DataSet();
+		socket.emit('startRealTimeMode', id);
+    };
+
+    // stop realtime mode - start post processing
+    $scope.stopRealTimeMode = function(id){
+		$scope.widget[id].isActive = false;
+		$scope.widget[id].title = 'Post Processing - Sensor No.' + id;
+		//AddTimelineChart(id, $scope.widget[id].timeline);
+		socket.emit('stopRealTimeMode', id);
+    };
+
+    // realtime data stream from sensor client
+    socket.on('startRealTimeMethod', function (index, ds) {
+    	$scope.widget[index].timeline.add([
+    		{content: ds.content, start: ds.start, end: ds.end}
+    	]);
+    }); 
 
 });
