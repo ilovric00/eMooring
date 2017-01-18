@@ -6,6 +6,13 @@
 * www.linkedin.com/in/ilovri00
 */
 
+/*
+* turquoise color (light): #009688
+* turquoise color (dark): #007368
+* turquoise color transparent (light): rgba(0, 150, 136, 0.5)
+* turquoise color transparent (dark): rgba(0, 150, 136, 0.5)
+*/
+
 body {
   font-family: 'Montserrat';
   color: #2c3e50;
@@ -16,19 +23,19 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(26, 188, 156, 0.5);
+  background: rgba(0, 150, 136, 0.5);
 }
 ::-webkit-scrollbar-thumb {
-  background: #0fb191;
+  background: #007368;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: #6ea298; 
+  background: #007368;
 }
 
 /* Header */
 .eMooring-header, .navbar-default .navbar-brand {
   background-color: #fff;
-  color: #18af91;
+  color: #007368;
 }
 
 #eMooring-logo {
@@ -40,7 +47,7 @@ body {
 
 /* Footer */
 #eMooring-footer {
-  background-color: rgba(26, 188, 156, 0.5);
+  background-color: rgba(0, 150, 136, 0.5);
   bottom: 0;
   position: fixed;
   z-index: 1000;
@@ -55,7 +62,7 @@ body {
 }
 
 .footer-button {
-  background-color: rgba(24, 175, 145, 0.5);
+  background-color: rgba(0, 150, 136, 0.5);
   color: #fff;
   height: 50px;
   bottom: 0;
@@ -74,7 +81,7 @@ body {
 }
 
 .footer-button:hover {
-  background-color: #18af91;
+  background-color: #007368;
 }
 
 /* Sidebar container*/
@@ -86,7 +93,7 @@ body {
   margin-bottom: 50px;
   overflow-x: hidden;
   overflow-y: auto; 
-  background-color: #3cc6ab;
+  background-color: #009688;
   border-right: 1px solid #eee;
 }
 
@@ -97,7 +104,7 @@ body {
 }
 
 .eMooring-sidebar-box {
-  background-color: #18af91;
+  background-color: #007368;
   color: #fff;
   font-size: 20px;
   position: fixed;
@@ -131,7 +138,7 @@ body {
 .nav-sidebar > .active > a,
 .nav-sidebar > li > a:focus, 
 .nav-sidebar > li > a:hover {
-  background-color: #18af91;
+  background-color: #007368;
   border-left: 3px solid #fff;
   padding-left: 17px; /*20px padding - 3px border-left*/
 }
@@ -159,10 +166,3 @@ body {
     width: calc(100% - 150px);
   }
 }
-
-#gridster {
-  background-color: pink;
-  margin: 20px;
-}
-
-

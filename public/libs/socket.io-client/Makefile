@@ -3,7 +3,7 @@ REPORTER = dot
 
 build: socket.io.js
 
-socket.io.js: lib/*.js package.json
+socket.io.js socket.io.min.js: lib/*.js package.json
 	@./node_modules/.bin/gulp
 
 test:

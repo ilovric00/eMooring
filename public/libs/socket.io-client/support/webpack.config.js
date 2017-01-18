@@ -1,5 +1,6 @@
 
 module.exports = {
+  name: 'default',
   entry: './lib/index.js',
   output: {
     library: 'io',
@@ -9,14 +10,16 @@ module.exports = {
   externals: {
     global: glob()
   },
+  devtool: 'cheap-module-source-map',
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
       loader: 'babel', // 'babel-loader' is also a legal name to reference
-      query: {
-        presets: ['es2015']
-      }
+      query: { presets: ['es2015'] }
+    }, {
+      test: /\json3.js/,
+      loader: 'imports?define=>false'
     }]
   }
 };

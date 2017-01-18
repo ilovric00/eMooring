@@ -8,25 +8,28 @@ app.controller('WidgetsController', function ($scope, AppService, socket) {
 		response.data.forEach(function(widget){
 			// if widget contains timeline chart
 			if(widget.timeline){
-				AddTimelineChart(widget._id, widget.timeline);
-				$scope.widgets.push(widget._id);
+				AddTimelineChart(widget);
 			}
 		});
 	});
 
 	//add timeline widget
-	function AddTimelineChart(id, timeline) {
-		console.log("Timeline widget " + id + " received from server...");
+	function AddTimelineChart(widget) {
+		var id = widget._id;
 		$scope.widget[id] = {};
+		console.log("Timeline widget " + id + " received from server...");
+		$scope.widget[id].id = id;
 		$scope.widget[id].title = 'Post Processing - Sensor No.' + id;
 		$scope.widget[id].isActive = false;
 		$scope.widget[id].timeline = new vis.DataSet();
-		$scope.widget[id].timeline = timeline.data;
+		$scope.widget[id].timeline = widget.timeline.data;
+		// add created widget to array of widgets
+		$scope.widgets.push($scope.widget[id]);
 	}; 
 
 	// remove graph widget 
-	$scope.removeWidget = function(id) {
-		var index = $scope.widgets.indexOf(id);
+	$scope.removeWidget = function(widget) {
+		var index = $scope.widgets.indexOf(widget);
 		$scope.widgets.splice(index, 1);
 	};
 

@@ -9,11 +9,16 @@
 /* widget header */
 .widget-header {
 	color: #fff !important;
-  	background-color: #3cc6ab !important;
+  	background-color: #009688 !important;
 }
 
 .widget-header-icon {
 	color: #fff;
 	float: right;
 	cursor: pointer;
+	margin-left: 5px;
+}
+
+.timeline {
+    height: inherit!important; 
 }

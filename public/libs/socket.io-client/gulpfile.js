@@ -5,6 +5,7 @@ const webpack = require('webpack-stream');
 const child = require('child_process');
 const help = require('gulp-task-listing');
 const eslint = require('gulp-eslint');
+const minify = require('gulp-minify');
 
 gulp.task('help', help);
 
@@ -14,11 +15,22 @@ gulp.task('default', ['build']);
 // BUILDING
 // //////////////////////////////////////
 
-const BUILD_TARGET_DIR = './';
+const BUILD_TARGET_DIR = './dist/';
 
 gulp.task('build', function () {
   return gulp.src('lib/*.js')
-    .pipe(webpack(require('./support/webpack.config.js')))
+    .pipe(webpack({
+      config: [
+        require('./support/webpack.config.js'),
+        require('./support/webpack.config.slim.js')
+      ]
+    }))
+    .pipe(minify({
+      ext: {
+        src: '.js',
+        min: '.min.js'
+      }
+    }))
     .pipe(gulp.dest(BUILD_TARGET_DIR));
 });
 
@@ -43,10 +55,10 @@ gulp.task('test-zuul', testZuul);
 
 gulp.task('lint', function () {
   return gulp.src([
-    '**/*.js',
-    '!node_modules/**',
-    '!coverage/**',
-    '!socket.io.js'
+    '*.js',
+    'lib/**/*.js',
+    'test/**/*.js',
+    'support/**/*.js'
   ])
     .pipe(eslint())
     .pipe(eslint.format())

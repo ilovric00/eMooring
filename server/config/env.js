@@ -12,7 +12,8 @@ module.exports = function(env){
 		default:
 			return {
 				'dbHost': 'localhost:27017',
-				'dbName' : 'emoooring-localDb',
+				//'dbName' : 'emoooring-localDb',
+				'dbName' : 'mooring',
 				'port': 3000,
 				// 'moscaPort': 4000,
 				'environment': 'Development'
