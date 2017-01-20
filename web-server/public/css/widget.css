@@ -1,0 +1,30 @@
+/*
+* widget.css
+* Defining a widget layout
+* 
+* © 2016 Ivan Lovric 
+* www.linkedin.com/in/ilovri00
+*/
+
+/* widget header */
+.widget-header {
+	color: #fff !important;
+  	background-color: #009688 !important;
+}
+
+.widget-header-icon {
+	color: rgba(255, 255, 255, 0.9);
+	float: right;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.widget-header-icon:hover {
+	color: #fff;
+}
+
+.vis-item-content {
+	background-color: rgba(0, 150, 136, 0.3);
+	border: 1px solid rgba(0, 150, 136, 0.3);
+	color: #000;
+}

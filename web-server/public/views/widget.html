@@ -1,0 +1,21 @@
+<!-- public/views/widget.html -->
+
+<!-- timeline chart -->
+<div class="panel panel-default" ng-if="widget.isVisible" ng-repeat="widget in widgets | filter:search"  gridster-item>
+  <!-- widget header -->
+  <div class="panel-heading widget-header">
+    <h3 class="panel-title text-center">
+      {{ widget.title || 'Title'}}
+    <span title="Remove" ng-click="removeWidget(widget)" class="glyphicon glyphicon-remove widget-header-icon"></span>
+    <span title="Play" ng-hide="widget.isActive" ng-click="startRealTimeMode(widget.id)" class="glyphicon glyphicon-play widget-header-icon"></span>
+    <span title="Stop" ng-show="widget.isActive" ng-click="stopRealTimeMode(widget.id)" class="glyphicon glyphicon-stop widget-header-icon"></span>
+    <span title="Refresh" ng-click="refreshWidget(widget.id)" class="glyphicon glyphicon-refresh widget-header-icon"></span>
+    <span title="Info" ng-click="getInfo(widget.id)" class="glyphicon glyphicon-info-sign widget-header-icon"></span>
+    </h3>
+  </div>
+
+  <!-- widget body -->
+  <div class="panel-body">
+    <vis-timeline data="widget.timeline" options="widget.options" events="events"></vis-timeline>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+# ignore backend dependencies
+web-server/node_modules/
+
+# ignore frontend dependencies
+web-server/public/libs/
