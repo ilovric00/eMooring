@@ -6,7 +6,7 @@ The marinas administrators have a clear view of the status of the berths, improv
 
 
 ## How to Use ##
-First, make sure you have **Node.js** & **MongoDB** installed.
+First, make sure you have **Node.js** (npm & bower) and **MongoDB** installed.
 
 ** 1. Clone **
 
