@@ -4,5 +4,10 @@ app.service("AppService", function($http) {
     this.getWidgets = function() {
         return $http.get('/widgets');
     };
+	
+	//GET single widget from server
+    this.getWidget = function (id) {
+        return $http.get('/widgets/' + id);
+    };
 
 });

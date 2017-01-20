@@ -1,1 +1,1 @@
-var app = angular.module("eMooringApp", ['gridster']);
+var app = angular.module("eMooringApp", ['gridster', 'toastr']);
