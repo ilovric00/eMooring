@@ -35,7 +35,7 @@ npm run demo
 cd emooring
 python demo.py
 ```
-*For example, you can set 15 numbers of iterations and 3 sensors.*
+*For example, you can set 15 iterations and 3 sensors.*
 
 
 ## Demo ##
