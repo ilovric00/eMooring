@@ -27,4 +27,4 @@ python demo.py
 *For example, you can set 15 numbers of iterations and 3 sensors.*
 
 
-![App.png](https://bitbucket.org/repo/zrMbeA/images/4243973612-App.png)
+![eMooring-demo.png](https://bitbucket.org/repo/zrMbeA/images/1354752457-eMooring-demo.png)
