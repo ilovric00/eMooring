@@ -1,11 +1,12 @@
 {
   "name": "emooring",
   "version": "1.0.0",
-  "description": "eMooring app",
+  "description": "eMooring app - server side dependencies",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "npm install && NODE_ENV=production node server.js"
+    "production": "npm install && NODE_ENV=production node server.js",
+	"demo": "npm install && bower install && node server.js"
   },
   "repository": {
     "type": "git",
