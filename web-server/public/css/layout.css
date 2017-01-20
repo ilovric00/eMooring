@@ -45,6 +45,10 @@ body {
   margin-left: 110px;
 }
 
+.navbar-toggle {
+    display: none;
+}
+
 /* Footer */
 #eMooring-footer {
   background-color: rgba(0, 150, 136, 0.5);
@@ -126,7 +130,7 @@ body {
  }
 
 /* Sidebar navigation */
-.nav-sidebar {
+.nav-sidebar:nth-child(2) {
   margin-top: 10px;
 }
 

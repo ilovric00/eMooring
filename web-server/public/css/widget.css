@@ -13,12 +13,18 @@
 }
 
 .widget-header-icon {
-	color: #fff;
+	color: rgba(255, 255, 255, 0.9);
 	float: right;
 	cursor: pointer;
 	margin-left: 5px;
 }
 
-.timeline {
-    height: inherit!important; 
+.widget-header-icon:hover {
+	color: #fff;
+}
+
+.vis-item-content {
+	background-color: rgba(0, 150, 136, 0.3);
+	border: 1px solid rgba(0, 150, 136, 0.3);
+	color: #000;
 }

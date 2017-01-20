@@ -2,11 +2,16 @@
 
 <div class="eMooring-sidebar">
   	<!-- Sidebar top -->
-	<span class="eMooring-sidebar-box sidebar-top">Default View</span>
+	<span class="eMooring-sidebar-box sidebar-top">Sensors</span>
 
 	<!-- Sidebar list structure -->
-	<ul class="nav nav-sidebar">
-		<li class="active"><a href="#"><span class="glyphicon glyphicon-home sidebar-icon"></span>Analytics</a></li>
+	<ul class="nav nav-sidebar" ng-repeat="widget in widgets | orderBy: 'id'">
+		<li ng-class="{active : widget.isVisible}" ng-click="toogleWidgets(widget)"><a href="#">
+			<span title="Play" ng-hide="widget.isActive" class="glyphicon glyphicon-pause"></span>
+			<span title="Play" ng-show="widget.isActive" class="glyphicon glyphicon-play"></span>
+			Sensor No. {{widget.id}}
+			<span title="Visible" ng-show="widget.isVisible" class="glyphicon glyphicon-ok sidebar-icon"></span>
+		</a></li>
 	</ul>
 
   	<!-- Sidebar bottom -->
