@@ -91,7 +91,7 @@ def mqtt_client_call(msg, id):
     try:
         client.connect('localhost', 1883, 60)
     except:
-        print ("ERROR: Could not connect to MQTT.")
+        print ("WARNING: Could not connect to MQTT.")
     client.loop_start()
     client.publish("eMooring", payload=json.dumps(msg), qos=1, retain=False)
     client.disconnect()
