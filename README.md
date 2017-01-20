@@ -22,7 +22,7 @@ git clone https://IvanLovric@bitbucket.org/IvanLovric/emooring.git
 ```
 #!javascript
 
-cd web-server
+cd emooring/web-server
 npm run demo
 ```
 
@@ -32,12 +32,13 @@ npm run demo
 
 ```
 #!javascript
-
+cd emooring
 python demo.py
 ```
 *For example, you can set 15 numbers of iterations and 3 sensors.*
 
 
 ## Demo ##
+Go to http://localhost:3000/eMooring/
 
 ![eMooring-demo.png](https://bitbucket.org/repo/zrMbeA/images/1354752457-eMooring-demo.png)
