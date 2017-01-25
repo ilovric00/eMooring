@@ -11,8 +11,6 @@ First, make sure you have **Python**, **Node.js** (npm & bower) and **MongoDB** 
 ** 1. Clone **
 
 ```
-#!javascript
-
 git clone https://IvanLovric@bitbucket.org/IvanLovric/emooring.git
 ```
 
@@ -20,8 +18,6 @@ git clone https://IvanLovric@bitbucket.org/IvanLovric/emooring.git
 ** 2. Setup web server and run it**
 
 ```
-#!javascript
-
 cd emooring/web-server
 npm run demo
 ```
@@ -31,7 +27,6 @@ npm run demo
 ** 3. Run python coordinator**
 
 ```
-#!javascript
 cd emooring
 python demo.py
 ```
